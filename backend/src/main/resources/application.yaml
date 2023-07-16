@@ -1,1 +1,30 @@
+server:
+  port: 8080
+#server:
+#  port: 80
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/open harmony?serverTimezone=GMT%2b8
 
+    #    url: jdbc:mysql://124.220.181.116:3306/mystery?serverTimezone=GMT%2b8
+    #    url: jdbc:mysql://localhost:3306/case?serverTimezone=GMT%2b8
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 10
+      connection-test-query: SELECT 1
+    #swagger
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    servlet:
+      load-on-startup: 1  # ????????DispatcherServlet
+      #      ????????????????5.29
+      multipart:
+        enabled: true
+mybatis-plus:
+  # mapper.xml ????
+  mapper-locations: classpath*:/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
