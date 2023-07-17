@@ -11,20 +11,13 @@ spring:
     #    url: jdbc:mysql://localhost:3306/case?serverTimezone=GMT%2b8
     username: root
     password: 123456
-    hikari:
-      minimum-idle: 10
-      connection-test-query: SELECT 1
-    #swagger
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
-    servlet:
-      load-on-startup: 1  # ????????DispatcherServlet
-      #      ????????????????5.29
-      multipart:
-        enabled: true
-mybatis-plus:
-  # mapper.xml ????
-  mapper-locations: classpath*:/mapper/*.xml
+mybatis:
+  mapper-locations: classpath:/Mapper/*.xml
+  type-aliases-package: com.open.harmony.entity
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+#mybatis-plus:
+#  # mapper.xml ????
+#  mapper-locations: classpath*:/mapper/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
