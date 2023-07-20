@@ -28,16 +28,17 @@ import java.util.Date;
 //        constraint goods_store
 //        foreign key (store_id) references store (store_id)
 //        );
-public class Goods {
-    private Integer goodsId;
+public class Product {
+    private Integer productId;
 
-    private String goodsName;
+    private String productName;
 
-    private Double goodsSize;
+    private Double productSize;
+
+    private Double productPrice;
+    private String productUnit;
 
     private Integer storeId;
-
-    private String identifyMethod;
 
     private Integer status;
 
