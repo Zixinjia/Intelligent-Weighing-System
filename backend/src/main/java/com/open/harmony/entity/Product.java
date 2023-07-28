@@ -33,10 +33,12 @@ public class Product {
 
     private String productName;
 
+
     private Double productSize;
 
     private Double productPrice;
     private String productUnit;
+
 
     private Integer storeId;
 
