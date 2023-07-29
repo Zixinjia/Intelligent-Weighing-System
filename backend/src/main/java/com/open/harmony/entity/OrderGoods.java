@@ -37,7 +37,7 @@ public class OrderGoods {
 
     private String goodsName;
 
-    private String goodsTotalUnit;
+    private String goodsUnit;
 
     private Double goodsPrice;
 

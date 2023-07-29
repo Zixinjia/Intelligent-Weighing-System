@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface OrderGoodsService extends IService<OrderGoods> {
 
-    public Integer insertOrderGoods(List<OrderGoods> orderGoodsList);
+
 }

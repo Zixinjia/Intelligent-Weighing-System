@@ -21,11 +21,7 @@ public interface ProductMapper {
    Integer updateProduct(Product product);
 
    @Delete("delete from product where product_id=#{productId}")
-   Integer deleteProduct(Integer product);
-//    int insert01(Goods goods);
-//
-//    int delete(Integer id);
-//
-//    List<Goods> findByName(String value);
+   Integer deleteProduct(Integer productId);
+
 
 }

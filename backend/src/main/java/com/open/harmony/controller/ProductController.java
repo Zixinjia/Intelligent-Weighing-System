@@ -5,54 +5,62 @@ import com.open.harmony.common.Result;
 import com.open.harmony.entity.Product;
 
 import com.open.harmony.mapper.ProductMapper;
+import com.open.harmony.service.ProductService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Api(tags = "商品模块")
 @RequestMapping("/product")
 @RestController
 public class ProductController {
 
     @Autowired
-    private ProductMapper productMapper;
+    private ProductService productService;
+
+    /**
+     * 查询所有商品
+     * @return
+     */
+    @ApiOperation("查询所有商品")
     @GetMapping("/findAll")
     public Result selectAll(){
-        List<Product> productList = productMapper.findAll();
-//        System.out.println(productList);
-        return Result.success(productList);
+        return productService.findAll();
     }
 
-
+    /**
+     * 更新商品
+     * @param product
+     * @return
+     */
+    @ApiOperation("更改指定商品")
     @PutMapping("/updateProduct")
     public Result updateProduct(@RequestBody Product product){
-        Integer updateOne = productMapper.updateProduct(product);
-        if(0 != updateOne){
-            return Result.success();
-        }
-        else {
-            return Result.error("更新失败");
-        }
+        return productService.updateProduct(product);
     }
 
+    /**
+     * 添加商品
+     * @param product
+     * @return
+     */
+    @ApiOperation("添加商品")
     @PostMapping("/addProduct")
     public Result addGoods(@RequestBody Product product){
-        Integer addOne = productMapper.insertProduct(product);
-        if(0 != addOne){
-            return Result.success();
-        }
-        else {
-            return Result.error("插入失败");
-        }
+        return productService.insertProduct(product);
     }
+
+    /**
+     * 删除指定商品
+     * @param id
+     * @return
+     */
+    @ApiOperation("删除商品")
     @DeleteMapping("/deleteProduct/{id}")
     public Result deleteProduct(@PathVariable Integer id){
-        Integer deleteOne = productMapper.deleteProduct(id);
-        if(0!=deleteOne){
-            return Result.success();
-        }
-        else{
-            return Result.error("删除失败");
-        }
+        return productService.deleteProduct(id);
     }
 }

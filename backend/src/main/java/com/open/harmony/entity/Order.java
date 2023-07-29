@@ -1,5 +1,6 @@
 package com.open.harmony.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
@@ -27,11 +28,12 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+
 public class Order {
 
     private Integer orderId;
 
-    private BigInteger storeId;
+    private Long storeId;
 
     private Double totalPrice;
 

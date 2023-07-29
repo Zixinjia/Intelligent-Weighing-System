@@ -1,25 +1,38 @@
 #server:
 #  port: 80
 server:
-  port: 8080
+  port: 80
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://47.117.166.111:3306/open harmony?serverTimezone=GMT%2b8
-
     #    url: jdbc:mysql://124.220.181.116:3306/mystery?serverTimezone=GMT%2b8
     #    url: jdbc:mysql://localhost:3306/case?serverTimezone=GMT%2b8
     username: root
     password: 123456
-mybatis:
-  mapper-locations: classpath:/Mapper/*.xml
-
-  type-aliases-package: com.open.harmony.entity
-  configuration:
-    map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-#mybatis-plus:
-#  # mapper.xml ????
-#  mapper-locations: classpath*:/mapper/*.xml
+  mvc:
+      path match:
+        matching-strategy: ANT_PATH_MATCHER
+#     解决springboot2版本和swagger3不兼容问题：https://github.com/springfox/springfox/issues/3462
+#mybatis:
+#  mapper-locations: classpath:/Mapper/*.xml
+#  type-aliases-package: com.open.harmony.entity
 #  configuration:
+#    map-underscore-to-camel-case: true
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis-plus:
+  configuration:
+    type‐aliases‐package: com.open.harmony.entity
+    ### 开启打印sql配置
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    ### xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+    mapper-locations: classpath:mapper/*.xml
+    configuration:
+      # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+      map-underscore-to-camel-case: true
+      # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+      call-setters-on-nulls: true
+      # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging.config:
+  classpath: log4j2.xml

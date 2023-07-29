@@ -21,8 +21,5 @@ public class OrderGoodsServiceImpl  extends ServiceImpl<OrderGoodsMapper, OrderG
     private OrderGoodsMapper orderGoodsMapper;
 
 
-    @Override
-    public Integer insertOrderGoods(List<OrderGoods> orderGoodsList){
-        return null;
-    }
+
 }
