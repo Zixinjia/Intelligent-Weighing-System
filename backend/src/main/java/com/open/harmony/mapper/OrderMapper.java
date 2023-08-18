@@ -16,7 +16,7 @@ public interface OrderMapper {
      * @return
      */
     @Select("select * from `order`")
-    List<Order> findAllOrders();
+    List<Order> findAll();
 
 
     /**

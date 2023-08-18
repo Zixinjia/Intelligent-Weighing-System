@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--此xml为方便后端本地开发调试所用-->
 <configuration status="info">
     <Properties>
         <!-- 声明日志文件存储的目录 -->

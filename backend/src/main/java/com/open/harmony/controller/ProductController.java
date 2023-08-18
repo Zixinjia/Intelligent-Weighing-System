@@ -53,14 +53,25 @@ public class ProductController {
         return productService.insertProduct(product);
     }
 
+//    /**
+//     * 删除指定商品
+//     * @param id
+//     * @return
+//     */
+//    @ApiOperation("删除商品")
+//    @DeleteMapping("/deleteProduct/{id}")
+//    public Result deleteProduct(@PathVariable Integer id){
+//        return productService.deleteProduct(id);
+//    }
+
     /**
-     * 删除指定商品
-     * @param id
+     *
+     * @param product
      * @return
      */
     @ApiOperation("删除商品")
-    @DeleteMapping("/deleteProduct/{id}")
-    public Result deleteProduct(@PathVariable Integer id){
-        return productService.deleteProduct(id);
+    @DeleteMapping("/deleteProduct")
+    public Result deleteProduct(@RequestBody Product product){
+        return productService.deleteProduct(product);
     }
 }

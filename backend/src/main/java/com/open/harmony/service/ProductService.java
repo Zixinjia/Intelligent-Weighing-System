@@ -30,9 +30,9 @@ public interface ProductService {
     Result updateProduct(Product product);
 
     /**
-     * 删除商品
-     * @param id
+     *
+     * @param product
      * @return
      */
-    Result deleteProduct(Integer id);
+    Result deleteProduct(Product product);
 }

@@ -1,5 +1,6 @@
 package com.open.harmony.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
@@ -32,16 +33,15 @@ import java.util.Date;
 @ToString
 public class OrderGoods {
 
-
     private Integer goodsId;
 
     private String goodsName;
 
-    private String goodsUnit;
+    private String goodsWeight;
 
     private Double goodsPrice;
 
-    private Double goodstotalPrice;
+    private Double goodsTotalPrice;
 
     private Integer orderId;
 
@@ -54,4 +54,6 @@ public class OrderGoods {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date updateTime;
+
+
 }

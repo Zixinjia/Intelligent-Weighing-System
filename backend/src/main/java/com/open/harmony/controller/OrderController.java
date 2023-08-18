@@ -1,5 +1,6 @@
 package com.open.harmony.controller;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.open.harmony.common.Result;
 import com.open.harmony.entity.Order;
 import com.open.harmony.entity.OrderGoods;
@@ -25,41 +26,60 @@ import java.util.List;
 public class OrderController {
 
     @Autowired
+    private OrderMapper orderMapper;
+    @Autowired
     private OrderGoodsService orderGoodsService;
 
     @Autowired
     private OrderService orderService;
+
     /**
      * 插入订单单品列表
+     *
      * @param orderGoodsList
      * @return
      */
+
     @ApiOperation("批量插入订单单品列表")
     @PostMapping("/addOrderGoods")
-    public Result insertOrderGoods(@RequestBody List<OrderGoods> orderGoodsList){
+    public Result insertOrderGoods(@RequestBody List<OrderGoods> orderGoodsList) {
         orderGoodsService.saveBatch(orderGoodsList);
         return Result.success();
     }
 
     /**
      * 添加订单
+     *
      * @param order
      * @return
      */
+
+//   此方法暂时用mapper注入
     @ApiOperation("添加订单")
     @PostMapping("/addOrder")
-    public Result insertOrder(@RequestBody Order order){
-        return orderService.insertOrder(order);
+    public Result insertOrder(@RequestBody Order order) {
+        order.setCreatedTime(new Date());
+        order.setUpdateTime(new Date());
+        Integer orderInsert = orderMapper.insertOrder(order);
+        if (orderInsert==0) {
+            return Result.error("插入失败");
+        }
+        else{
+            return Result.success();
+        }
     }
 
     /**
      * 查询所有订单
+     *
      * @return
      */
+//   此方法暂时用mapper注入
     @ApiOperation("查询所有订单")
-    @GetMapping("/findAllOrders")
-    public Result selectAllOrder(){
-        return orderService.findAllOrders();
+    @GetMapping("/findAll")
+    public Result selectAllOrder() {
+        return Result.success(orderMapper.findAll());
     }
+
 
 }

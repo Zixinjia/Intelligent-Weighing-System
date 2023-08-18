@@ -66,13 +66,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     /**
-     * 删除商品
-     * @param id
+     *
+     * @param product
      * @return
      */
     @Override
-    public Result deleteProduct(Integer id) {
-        Integer deleteOne = productMapper.deleteProduct(id);
+    public Result deleteProduct(Product product) {
+        String name = product.getProductName();
+        Integer storeId = product.getStoreId();
+        Integer deleteOne = productMapper.deleteProduct(name,storeId);
         if(0!=deleteOne){
             return Result.success();
         }

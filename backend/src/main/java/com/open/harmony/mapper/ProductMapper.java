@@ -20,8 +20,9 @@ public interface ProductMapper {
            "status=#{status} where product_id=#{productId}")
    Integer updateProduct(Product product);
 
-   @Delete("delete from product where product_id=#{productId}")
-   Integer deleteProduct(Integer productId);
+
+   @Delete("delete from product where product_name = #{productName} and store_id=#{storeId}")
+   Integer deleteProduct(String productName,Integer storeId);
 
 
 }

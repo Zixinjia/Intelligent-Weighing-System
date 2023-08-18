@@ -18,12 +18,23 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
     private OrderMapper orderMapper;
 
+    /**
+     * 查询订单
+     * @return
+     */
+    //controller暂时使用mapper
     @Override
     public Result findAllOrders() {
-        List<Order> orderList = orderMapper.findAllOrders();
+        List<Order> orderList = orderMapper.findAll();
         return Result.success(orderList);
     }
 
+    /**
+     * 插入订单
+     * @param order
+     * @return
+     */
+    //controller暂时使用mapper
     @Override
     public Result insertOrder(Order order) {
         order.setCreatedTime(new Date());
