@@ -65,7 +65,7 @@ public class ProductController {
 //    }
 
     /**
-     *
+     * sql根据名字和商店id删除
      * @param product
      * @return
      */
