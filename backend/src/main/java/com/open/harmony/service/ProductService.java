@@ -2,9 +2,6 @@ package com.open.harmony.service;
 
 import com.open.harmony.common.Result;
 import com.open.harmony.entity.Product;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Update;
 
 
 public interface ProductService {
@@ -29,10 +26,11 @@ public interface ProductService {
      */
     Result updateProduct(Product product);
 
-    /**
-     *
-     * @param product
-     * @return
-     */
-    Result deleteProduct(Product product);
+//    /**
+//     *
+//     * @param product
+//     * @return
+//     */
+//    Result deleteProduct(Product product);
+    Result deleteProduct(String name, Integer storeId);
 }

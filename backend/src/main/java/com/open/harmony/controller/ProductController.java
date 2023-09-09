@@ -9,8 +9,10 @@ import com.open.harmony.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Api(tags = "商品模块")
@@ -64,14 +66,22 @@ public class ProductController {
 //        return productService.deleteProduct(id);
 //    }
 
-    /**
-     * sql根据名字和商店id删除
-     * @param product
-     * @return
-     */
-    @ApiOperation("删除商品")
+
+
+
+//    /**
+//     * sql根据名字和商店id删除
+//     * @param product
+//     * @return
+//     */
+//    @ApiOperation("删除商品")
+//    @DeleteMapping("/deleteProduct")
+//    public Result deleteProduct(@RequestBody Product product){
+//        return productService.deleteProduct(product);
+//    }
+    @Transactional
     @DeleteMapping("/deleteProduct")
-    public Result deleteProduct(@RequestBody Product product){
-        return productService.deleteProduct(product);
+    public Result deleteProduct(String name, @RequestParam(required = false)Integer store_id){
+        return productService.deleteProduct(name,store_id);
     }
 }

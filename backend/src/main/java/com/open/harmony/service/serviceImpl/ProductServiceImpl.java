@@ -2,13 +2,11 @@ package com.open.harmony.service.serviceImpl;
 
 import com.open.harmony.common.Result;
 import com.open.harmony.entity.Product;
-import com.open.harmony.mapper.OrderMapper;
 import com.open.harmony.mapper.ProductMapper;
 import com.open.harmony.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -64,22 +62,33 @@ public class ProductServiceImpl implements ProductService {
             return Result.error("更新失败");
         }
     }
+//
+//    /**
+//     *
+//     * @param product
+//     * @return
+//     */
+//    @Override
+//    public Result deleteProduct(Product product) {
+//        String name = product.getProductName();
+//        Integer storeId = product.getStoreId();
+//        Integer deleteOne = productMapper.deleteProduct(name,storeId);
+//        if(0!=deleteOne){
+//            return Result.success();
+//        }
+//        else{
+//            return Result.error("删除失败");
+//        }
+//    }
+@Override
+public Result deleteProduct(String name, Integer storeId) {
 
-    /**
-     *
-     * @param product
-     * @return
-     */
-    @Override
-    public Result deleteProduct(Product product) {
-        String name = product.getProductName();
-        Integer storeId = product.getStoreId();
-        Integer deleteOne = productMapper.deleteProduct(name,storeId);
-        if(0!=deleteOne){
-            return Result.success();
-        }
-        else{
-            return Result.error("删除失败");
-        }
+    Integer deleteOne = productMapper.deleteProduct(name,storeId);
+    if(0!=deleteOne){
+        return Result.success();
     }
+    else{
+        return Result.error("删除失败");
+    }
+}
 }
