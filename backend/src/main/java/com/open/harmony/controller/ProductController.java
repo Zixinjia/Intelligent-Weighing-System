@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
+import java.util.Date;
 import java.util.List;
 
 @Api(tags = "商品模块")
@@ -25,33 +26,41 @@ public class ProductController {
 
     /**
      * 查询所有商品
+     *
      * @return
      */
     @ApiOperation("查询所有商品")
     @GetMapping("/findAll")
-    public Result selectAll(){
+    public Result selectAll() {
         return productService.findAll();
     }
 
     /**
      * 更新商品
+     *
      * @param product
      * @return
      */
     @ApiOperation("更改指定商品")
     @PutMapping("/updateProduct")
-    public Result updateProduct(@RequestBody Product product){
+    public Result updateProduct(@RequestBody Product product) {
+
+        product.setUpdateTime(new Date());
         return productService.updateProduct(product);
     }
 
     /**
      * 添加商品
+     *
      * @param product
      * @return
      */
     @ApiOperation("添加商品")
     @PostMapping("/addProduct")
-    public Result addGoods(@RequestBody Product product){
+    public Result addGoods(@RequestBody Product product) {
+
+        product.setCreatedTime(new Date());
+        product.setUpdateTime(new Date());
         return productService.insertProduct(product);
     }
 
@@ -67,9 +76,7 @@ public class ProductController {
 //    }
 
 
-
-
-//    /**
+    //    /**
 //     * sql根据名字和商店id删除
 //     * @param product
 //     * @return
@@ -81,7 +88,7 @@ public class ProductController {
 //    }
     @Transactional
     @DeleteMapping("/deleteProduct")
-    public Result deleteProduct(String name, @RequestParam(required = false)Integer store_id){
-        return productService.deleteProduct(name,store_id);
+    public Result deleteProduct(String name, @RequestParam(required = false) Integer store_id) {
+        return productService.deleteProduct(name, store_id);
     }
 }

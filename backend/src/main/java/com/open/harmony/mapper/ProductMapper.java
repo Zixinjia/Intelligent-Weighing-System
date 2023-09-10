@@ -13,12 +13,12 @@ public interface ProductMapper {
    @Select("select * from product")
     List<Product> findAll();
 
-   @Insert("insert into product(product_name, product_price,product_unit, store_id,status) " +
-           "values(#{productName},#{productPrice},#{productUnit},#{storeId},#{status})")
+   @Insert("insert into product(product_name, product_price,product_unit, store_id,status,created_time,update_time) " +
+           "values(#{productName},#{productPrice},#{productUnit},#{storeId},#{status},#{createdTime},#{updateTime})")
    Integer insertProduct(Product product);
 
    @Update("update product set product_name=#{productName},product_price=#{productPrice},product_unit=#{productUnit},store_id=#{storeId}," +
-           "status=#{status} where product_name=#{productName}")
+           "status=#{status},update_time=#{updateTime} where product_name=#{productName}")
    Integer updateProduct(Product product);
 
 

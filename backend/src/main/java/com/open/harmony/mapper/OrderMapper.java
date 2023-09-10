@@ -24,8 +24,8 @@ public interface OrderMapper {
      * @param order
      * @return
      */
-    @Insert("insert into `order`( store_id, total_price, content,status) " +
-            "VALUES (#{storeId},#{totalPrice},#{content},#{status})")
+    @Insert("insert into `order`( store_id, total_price, content,status,created_time,update_time) " +
+            "VALUES (#{storeId},#{totalPrice},#{content},#{status},#{createdTime},#{updateTime})")
     Integer insertOrder(Order order);
 
 

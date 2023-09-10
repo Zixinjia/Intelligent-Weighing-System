@@ -7,6 +7,7 @@ import com.open.harmony.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -38,7 +39,10 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
     public Result insertProduct(Product product) {
+        product.setCreatedTime(new Date());
+        product.setUpdateTime(new Date());
         Integer addOne = productMapper.insertProduct(product);
+
         if(0 != addOne){
             return Result.success();
         }
@@ -54,7 +58,9 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
     public Result updateProduct(Product product) {
+        product.setUpdateTime(new Date());
         Integer updateOne = productMapper.updateProduct(product);
+
         if(0 != updateOne){
             return Result.success();
         }
