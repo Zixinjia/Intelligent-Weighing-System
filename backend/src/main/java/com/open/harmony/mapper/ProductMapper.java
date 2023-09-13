@@ -17,7 +17,7 @@ public interface ProductMapper {
            "values(#{productName},#{productPrice},#{productUnit},#{storeId},#{status},#{createdTime},#{updateTime})")
    Integer insertProduct(Product product);
 
-   @Update("update product set product_name=#{productName},product_price=#{productPrice},product_unit=#{productUnit},store_id=#{storeId}," +
+   @Update("update product set product_price=#{productPrice},product_unit=#{productUnit},store_id=#{storeId}," +
            "status=#{status},update_time=#{updateTime} where product_name=#{productName} and store_id = #{storeId}")
    Integer updateProduct(Product product);
 

@@ -1,6 +1,8 @@
 package com.open.harmony.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
@@ -32,7 +34,7 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 public class OrderGoods {
-
+    @TableId(type = IdType.AUTO)
     private Integer goodsId;
 
     private String goodsName;

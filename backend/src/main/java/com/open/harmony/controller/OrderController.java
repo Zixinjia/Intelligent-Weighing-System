@@ -1,5 +1,8 @@
 package com.open.harmony.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import cn.hutool.log.Log;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.open.harmony.common.Result;
 import com.open.harmony.entity.Order;
@@ -33,6 +36,8 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    private static final Logger logger = LogManager.getLogger(OrderController.class);
+
     /**
      * 插入订单单品列表
      *
@@ -61,10 +66,9 @@ public class OrderController {
         order.setCreatedTime(new Date());
         order.setUpdateTime(new Date());
         Integer orderInsert = orderMapper.insertOrder(order);
-        if (orderInsert==0) {
+        if (orderInsert == 0) {
             return Result.error("插入失败");
-        }
-        else{
+        } else {
             return Result.success();
         }
     }
@@ -75,11 +79,34 @@ public class OrderController {
      * @return
      */
 //   此方法暂时用mapper注入
-    @ApiOperation("查询所有订单")
-    @GetMapping("/findAll")
-    public Result selectAllOrder() {
-        return Result.success(orderMapper.findAll());
+//    @ApiOperation("查询所有订单")
+//    @GetMapping("/findAll")
+//    public Result selectAllOrder() {
+//        return Result.success(orderMapper.findAll());
+//    }
+
+    /**
+     * 查询当前商家所有订单
+     *
+     * @param storeId
+     * @return
+     */
+    @ApiOperation("查询当前商家所有订单")
+    @GetMapping("/findAllOrder")
+    public Result selectAllOrder(Integer storeId) {
+        return orderService.findAllOrders(storeId);
     }
 
-
+    /**
+     * 查询当前商家某订单明细
+     *
+     * @param storeId
+     * @param orderId
+     * @return
+     */
+    @ApiOperation("查询当前商家某订单明细")
+    @GetMapping("/{storeId}/{orderId}")
+    public Result selectOrderDetail(@PathVariable Integer storeId, @PathVariable Integer orderId) {
+        return orderService.findAllOrderDetail(storeId, orderId);
+    }
 }

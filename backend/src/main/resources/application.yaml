@@ -6,6 +6,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://47.117.166.111:3306/harmony?serverTimezone=GMT%2b8
+
     #    url: jdbc:mysql://124.220.181.116:3306/mystery?serverTimezone=GMT%2b8
 #    url: jdbc:mysql://localhost:3306/open harmony?serverTimezone=GMT%2b8
     username: root
