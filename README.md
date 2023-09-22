@@ -2,54 +2,25 @@
 
 ```
 backend
-   └─src
-      ├─main
-      │  ├─java
-      │  │  └─com
-      │  │      └─open
-      │  │          └─harmony
-      │  │              ├─common
-      │  │              ├─config
-      │  │              ├─controller
-      │  │              ├─entity
-      │  │              │  └─dto
-      │  │              ├─mapper
-      │  │              ├─service
-      │  │              │  └─serviceImpl
-      │  │              └─util
-      │  └─resources
-      │      ├─com.open.harmony.mapper
-      │      ├─static
-      │      └─templates
-      └─target
-          ├─classes
-          │  └─com
-          │      └─open
-          │          └─harmony
-          │              ├─common
-          │              ├─config
-          │              ├─controller
-          │              ├─entity
-          │              │  └─dto
-          │              ├─mapper
-          │              └─service
-          │                  └─serviceImpl
-          ├─generated-sources
-          │  └─annotations
-          ├─generated-test-sources
-          │  └─test-annotations
-          ├─maven-archiver
-          ├─maven-status
-          │  └─maven-compiler-plugin
-          │      ├─compile
-          │      │  └─default-compile
-          │      └─testCompile
-          │          └─default-testCompile
-          └─test-classes
-              └─com
-                  └─open
-                      └─harmony
-```
+  └─src
+    ├─main
+    │  ├─java
+    │  │  └─com
+    │  │      └─open
+    │  │          └─harmony
+    │  │              ├─common
+    │  │              ├─config
+    │  │              ├─controller
+    │  │              ├─entity
+    │  │              │  └─dto
+    │  │              ├─mapper
+    │  │              └─service
+    │  │                  └─serviceImpl
+    │  └─resources
+    │      ├─com.open.harmony.mapper
+    │      ├─static
+    │      └─templates
+    └─exportToHTML
 
 
 
