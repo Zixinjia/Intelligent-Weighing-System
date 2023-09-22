@@ -88,8 +88,6 @@ backend
 
 1. 克隆项目代码到本地：
 
-   Copy
-
    ```
    git clone git@atomgit.com:so_love_bang/backend.git
    ```
