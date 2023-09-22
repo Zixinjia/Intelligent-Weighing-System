@@ -125,7 +125,7 @@ backend
 
 2. 配置数据库连接信息：
 
-   在`application.properties`或`application.yml`文件中配置数据库连接信息，包括数据库URL、用户名和密码等。
+   在`application.yml`文件中配置数据库连接信息，包括数据库URL、用户名和密码等。
 
 3. 运行项目：
 
