@@ -108,5 +108,4 @@ backend
 
 访问路径 http://jiazixin.xyz/swagger-ui/#/
 
-![image-20230922182227640](C:\Users\honor\AppData\Roaming\Typora\typora-user-images\image-20230922182227640.png)
 
