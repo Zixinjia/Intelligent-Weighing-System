@@ -1,6 +1,5 @@
 组织结构
 
-<<<<<<< HEAD
 ```
 backend
   └─src
@@ -25,13 +24,10 @@ backend
 
 
 
-=======
->>>>>>> d4c92c2 (修改了查看订单明细功能)
 ## 开发环境安装
 
 ### 开发环境
 
-<<<<<<< HEAD
 | 工具              | 描述                                                   |
 | ----------------- | ------------------------------------------------------ |
 | IDEA              | 开发Java程序                                           |
@@ -46,22 +42,6 @@ backend
 | Maven             | 项目构建工具，用于管理和构建Java项目的依赖和构建过程   |
 | Typora            | Markdown编辑器                                         |
 | X-shell           | Linux远程连接工具                                      |
-=======
-| 工具 | 描述 |
-| --- | --- |
-| IDEA | 开发Java程序 |
-| JDK 1.8 | Java开发工具包，用于编译、运行Java程序 |
-| MySQL 5.7+ | 关系型数据库管理系统，用于存储和管理数据 |
-| Git | 版本控制工具，用于管理和跟踪代码的变更 |
-| Jenkins | 持续集成和持续交付工具，用于自动化构建、测试和部署软件 |
-| DataGrip | 数据库集成开发环境，用于管理和操作多种数据库系统 |
-| Navicat | 数据库管理和开发工具，用于连接和管理多种数据库 |
-| Postman | API开发和测试工具，用于发送和验证HTTP请求 |
-| Alibaba Cloud ECS | 阿里云的云服务器实例，用于托管应用程序和服务 |
-| Maven | 项目构建工具，用于管理和构建Java项目的依赖和构建过程 |
-| Typora | Markdown编辑器 |
-| X-shell | Linux远程连接工具 |
->>>>>>> d4c92c2 (修改了查看订单明细功能)
 
 ### 启动
 
@@ -94,10 +74,6 @@ backend
 | Maven            | 项目构建工具        | https://maven.apache.org/                      |
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> d4c92c2 (修改了查看订单明细功能)
 ## 功能模块
 
 在这里列出项目后端的主要功能模块，并对每个功能模块进行简要说明。例如：
@@ -112,20 +88,14 @@ backend
 
 1. 克隆项目代码到本地：
 
-   ```
-   git clone git@atomgit.com:so_love_bang/backend.git
-   ```
-<<<<<<< HEAD
+```
 
+   git clone git@atomgit.com:so_love_bang/backend.git
+
+   ```
 2. 配置数据库连接信息：
 
    在`application.yml`文件中配置数据库连接信息，包括数据库URL、用户名和密码等。
-=======
-   
-2. 配置数据库连接信息：
-
-   在`application.properties`或`application.yml`文件中配置数据库连接信息，包括数据库URL、用户名和密码等。
->>>>>>> d4c92c2 (修改了查看订单明细功能)
 
 3. 运行项目：
 
@@ -139,8 +109,8 @@ backend
 
 访问路径 http://jiazixin.xyz/swagger-ui/#/
 
-<<<<<<< HEAD
-=======
-![image-20230922182227640](C:\Users\honor\AppData\Roaming\Typora\typora-user-images\image-20230922182227640.png)
->>>>>>> d4c92c2 (修改了查看订单明细功能)
+
+
+   ```
+
 
