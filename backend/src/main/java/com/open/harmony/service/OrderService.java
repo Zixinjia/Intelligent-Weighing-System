@@ -23,11 +23,11 @@ public interface OrderService {
      * 查询订单详情
      *
      * @param storeId
-     * @param orderId
+//     * @param orderId
      * @return
      */
-    Result findAllOrderDetail(Integer storeId, Integer orderId);
-
+//    Result findAllOrderDetail(Integer storeId, Integer orderId);
+    Result findAllOrderDetail(Integer storeId);
     /**
      * 添加订单
      *

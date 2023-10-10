@@ -106,7 +106,10 @@ public class OrderController {
      */
     @ApiOperation("查询当前商家某订单明细")
     @GetMapping("/{storeId}/{orderId}")
-    public Result selectOrderDetail(@PathVariable Integer storeId, @PathVariable Integer orderId) {
-        return orderService.findAllOrderDetail(storeId, orderId);
+//    public Result selectOrderDetail(@PathVariable Integer storeId, @PathVariable Integer orderId) {
+//        return orderService.findAllOrderDetail(storeId, orderId);
+//    }
+    public Result selectOrderDetail(@PathVariable Integer storeId) {
+        return orderService.findAllOrderDetail(storeId);
     }
 }

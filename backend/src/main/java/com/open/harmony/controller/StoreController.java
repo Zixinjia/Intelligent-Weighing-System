@@ -31,10 +31,10 @@ public class StoreController {
         String password = store.getPassword();
         return storeService.Login(storeId,password);
     }
-    @GetMapping("/12345")
-    public String test(){
-        return "Hello,test~";
-    }
+//    @GetMapping("/12345")
+//    public String test(){
+//        return "Hello,test~";
+//    }
 
 
 

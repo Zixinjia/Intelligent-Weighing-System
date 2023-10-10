@@ -35,12 +35,11 @@ public interface OrderMapper {
      * 查询某订单中的详情
      * @return
      */
-    @Select("select * from order_goods where store_id = #{storeId} and order_id = #{orderId}")
-    List<OrderGoods> findAllOrderDetail(Integer storeId, Integer orderId);
-    //    @Select("select * from product")
-//    List<Order> findAllOrder(Integer storeId);
-//            @Select("select * from store")
-//            List<Order> findAllOrder(Integer storeId);
+//    @Select("select * from order_goods where store_id = #{storeId} and order_id = #{orderId}")
+//    List<OrderGoods> findAllOrderDetail(Integer storeId, Integer orderId);
+
+    @Select("select * from order_goods where store_id = #{storeId} ")
+    List<OrderGoods> findAllOrderDetail(Integer storeId);
     /**
      * 插入订单
      * @param order

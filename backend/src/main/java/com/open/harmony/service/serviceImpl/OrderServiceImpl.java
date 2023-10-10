@@ -49,15 +49,19 @@ public class OrderServiceImpl implements OrderService {
 
     /**
      * @param storeId
-     * @param orderId
+//     * @param orderId
      * @return
      */
     @Override
-    public Result findAllOrderDetail(Integer storeId, Integer orderId) {
-        List<OrderGoods> orderGoods = orderMapper.findAllOrderDetail(storeId,orderId) ;
+//    public Result findAllOrderDetail(Integer storeId, Integer orderId) {
+//        List<OrderGoods> orderGoods = orderMapper.findAllOrderDetail(storeId,orderId) ;
+//        return Result.success(orderGoods);
+//    }
+
+    public Result findAllOrderDetail(Integer storeId) {
+        List<OrderGoods> orderGoods = orderMapper.findAllOrderDetail(storeId) ;
         return Result.success(orderGoods);
     }
-
     /**
      * 插入订单
      *
