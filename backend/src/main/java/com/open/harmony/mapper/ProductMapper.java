@@ -13,6 +13,10 @@ public interface ProductMapper {
    @Select("select * from product")
     List<Product> findAll();
 
+   @Select("select * from product where store_id = #{storeId}")
+   List<Product> findAllByStoreId(Integer storeId);
+
+
    @Insert("insert into product(product_name, product_price,product_unit, store_id,status,created_time,update_time) " +
            "values(#{productName},#{productPrice},#{productUnit},#{storeId},#{status},#{createdTime},#{updateTime})")
    Integer insertProduct(Product product);

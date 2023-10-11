@@ -36,6 +36,17 @@ public class ProductController {
     }
 
     /**
+     * 查询所有商品
+     *
+     * @return
+     */
+    @ApiOperation("根据商户id查询所有商品")
+    @GetMapping("/findAllByStoreId")
+    public Result selectAllByStoreId(Integer storeId) {
+        return productService.findAllByStoreId(storeId);
+    }
+
+    /**
      * 更新商品
      *
      * @param product

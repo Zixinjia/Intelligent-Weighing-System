@@ -13,6 +13,12 @@ public interface ProductService {
     Result findAll();
 
     /**
+     * 根据商户id查询商品
+     * @return
+     */
+    Result findAllByStoreId(Integer storeId);
+
+    /**
      * 增加商品
      * @param product
      * @return

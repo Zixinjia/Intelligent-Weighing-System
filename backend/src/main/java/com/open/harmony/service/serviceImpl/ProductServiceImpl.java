@@ -33,6 +33,18 @@ public class ProductServiceImpl implements ProductService {
     }
 
     /**
+     * 根据商户id查询商品
+     * @return
+     */
+    @Override
+    public Result findAllByStoreId(Integer storeId) {
+        List<Product> productList = productMapper.findAllByStoreId(storeId);
+        return Result.success(productList);
+    }
+
+
+
+    /**
      * 添加商品
      * @param product
      * @return
