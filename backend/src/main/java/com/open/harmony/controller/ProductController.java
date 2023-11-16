@@ -1,10 +1,6 @@
 package com.open.harmony.controller;
-
 import com.open.harmony.common.Result;
-
 import com.open.harmony.entity.Product;
-
-import com.open.harmony.mapper.ProductMapper;
 import com.open.harmony.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -12,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigInteger;
 import java.util.Date;
-import java.util.List;
 
 @Api(tags = "商品模块")
 @RequestMapping("/product")
@@ -75,6 +69,18 @@ public class ProductController {
         return productService.insertProduct(product);
     }
 
+    /**
+     * 删除指定商品
+     * @param name
+     * @param store_id
+     * @return
+     */
+    @Transactional
+    @DeleteMapping("/deleteProduct")
+    public Result deleteProduct(String name, @RequestParam(required = false) Integer store_id) {
+        return productService.deleteProduct(name, store_id);
+    }
+}
 //    /**
 //     * 删除指定商品
 //     * @param id
@@ -87,7 +93,7 @@ public class ProductController {
 //    }
 
 
-    //    /**
+//    /**
 //     * sql根据名字和商店id删除
 //     * @param product
 //     * @return
@@ -97,9 +103,4 @@ public class ProductController {
 //    public Result deleteProduct(@RequestBody Product product){
 //        return productService.deleteProduct(product);
 //    }
-    @Transactional
-    @DeleteMapping("/deleteProduct")
-    public Result deleteProduct(String name, @RequestParam(required = false) Integer store_id) {
-        return productService.deleteProduct(name, store_id);
-    }
-}
+

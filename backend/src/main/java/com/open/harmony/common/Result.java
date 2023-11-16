@@ -1,15 +1,7 @@
 package com.open.harmony.common;
-
-/**
- * @Description:
- * @Author: jzx
- * @Date: 2023-05-23 9:19
- */
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.io.Serializable;
 
 /**

@@ -1,5 +1,4 @@
 package com.open.harmony.controller;
-
 import com.open.harmony.common.Result;
 import com.open.harmony.entity.Store;
 import com.open.harmony.mapper.StoreMapper;
@@ -8,9 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.math.BigInteger;
-
 @Api(tags = "店家模块")
 @RestController
 @RequestMapping("/store")
@@ -20,6 +17,7 @@ public class StoreController {
 
     /**
      * 店家登录
+     *
      * @param store
      * @return
      */
@@ -29,13 +27,11 @@ public class StoreController {
     public Result storeLogin(@RequestBody Store store) {
         BigInteger storeId = store.getStoreId();
         String password = store.getPassword();
-        return storeService.Login(storeId,password);
+        return storeService.Login(storeId, password);
     }
+
+}
 //    @GetMapping("/12345")
 //    public String test(){
 //        return "Hello,test~";
 //    }
-
-
-
-}

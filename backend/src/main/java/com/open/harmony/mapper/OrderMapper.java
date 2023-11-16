@@ -1,5 +1,6 @@
 package com.open.harmony.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.open.harmony.entity.Order;
 
 import com.open.harmony.entity.OrderGoods;
@@ -12,7 +13,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 @Mapper
-public interface OrderMapper {
+public interface OrderMapper extends BaseMapper<Order> {
 
     /**
      * 查找所有订单
@@ -23,6 +24,7 @@ public interface OrderMapper {
 
     /**
      * 查询所有订单
+     *
      * @param storeId
      * @return
      */
@@ -33,15 +35,15 @@ public interface OrderMapper {
 
     /**
      * 查询某订单中的详情
+     *
      * @return
      */
-//    @Select("select * from order_goods where store_id = #{storeId} and order_id = #{orderId}")
-//    List<OrderGoods> findAllOrderDetail(Integer storeId, Integer orderId);
-
     @Select("select * from order_goods where store_id = #{storeId} ")
     List<OrderGoods> findAllOrderDetail(Integer storeId);
+
     /**
      * 插入订单
+     *
      * @param order
      * @return
      */
@@ -51,3 +53,5 @@ public interface OrderMapper {
 
 
 }
+//    @Select("select * from order_goods where store_id = #{storeId} and order_id = #{orderId}")
+//    List<OrderGoods> findAllOrderDetail(Integer storeId, Integer orderId);

@@ -20,7 +20,6 @@ import springfox.documentation.spring.web.plugins.WebMvcRequestHandlerProvider;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.stream.Collectors;
-
 @Configuration
 @EnableOpenApi
 public class SwaggerConfig {

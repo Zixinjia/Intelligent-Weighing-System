@@ -1,9 +1,6 @@
 package com.open.harmony.controller;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import cn.hutool.log.Log;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.open.harmony.common.Result;
 import com.open.harmony.entity.Order;
 import com.open.harmony.entity.OrderGoods;
@@ -59,7 +56,6 @@ public class OrderController {
      * @return
      */
 
-//   此方法暂时用mapper注入
     @ApiOperation("添加订单")
     @PostMapping("/addOrder")
     public Result insertOrder(@RequestBody Order order) {
@@ -72,18 +68,6 @@ public class OrderController {
             return Result.success();
         }
     }
-
-    /**
-     * 查询所有订单
-     *
-     * @return
-     */
-//   此方法暂时用mapper注入
-//    @ApiOperation("查询所有订单")
-//    @GetMapping("/findAll")
-//    public Result selectAllOrder() {
-//        return Result.success(orderMapper.findAll());
-//    }
 
     /**
      * 查询当前商家所有订单
@@ -100,17 +84,29 @@ public class OrderController {
     /**
      * 查询当前商家某订单明细
      *
-     * @param storeId
-//     * @param orderId
+     * @param storeId //     * @param orderId
      * @return
      */
     @ApiOperation("查询当前商家某订单明细")
-//    @GetMapping("/{storeId}/{orderId}")
-//    public Result selectOrderDetail(@PathVariable Integer storeId, @PathVariable Integer orderId) {
-//        return orderService.findAllOrderDetail(storeId, orderId);
-//    }
     @GetMapping("/{storeId}")
     public Result selectOrderDetail(@PathVariable Integer storeId) {
         return orderService.findAllOrderDetail(storeId);
     }
+
+
 }
+///**
+// * 查询所有订单
+// *
+// * @return
+// */
+//   此方法暂时用mapper注入
+//    @ApiOperation("查询所有订单")
+//    @GetMapping("/findAll")
+//    public Result selectAllOrder() {
+//        return Result.success(orderMapper.findAll());
+//    }
+//    @GetMapping("/{storeId}/{orderId}")
+//    public Result selectOrderDetail(@PathVariable Integer storeId, @PathVariable Integer orderId) {
+//        return orderService.findAllOrderDetail(storeId, orderId);
+//    }
