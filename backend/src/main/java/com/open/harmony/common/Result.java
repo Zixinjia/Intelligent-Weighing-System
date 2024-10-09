@@ -39,4 +39,5 @@ public class Result implements Serializable {
         return new Result(CODE_SYS_ERROR, "系统错误", null);
     }
 
+
 }

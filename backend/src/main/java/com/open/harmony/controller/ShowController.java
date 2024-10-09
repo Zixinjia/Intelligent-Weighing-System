@@ -77,7 +77,7 @@ public class ShowController {
      * 分区销量
      * @return
      */
-    @ApiOperation("分区销量")
+    @ApiOperation("分区销量情况")
     @GetMapping("/transactions-by-store")
     public Result getStoreTransactions() {
         return showService.getStoreTransactions();

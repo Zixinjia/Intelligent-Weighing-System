@@ -9,10 +9,7 @@ import com.open.harmony.mapper.ShowMapper;
 import com.open.harmony.service.ShowService;
 import com.open.harmony.util.FakeDataGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
