@@ -1,0 +1,40 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:\\Users\\17151\\.ohos\\config\\openharmony\\auto_ohos_default_transactions_com.so_love_bang.transactions.cer",
+          "storePassword": "0000001B40C71285A94FF14E01EB2874515EB3A447D6D08DD57684A860B9F3DADD7395E5FE822CBB763715",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B802232405AC90D20612E0A416467A40D32D12C8F4992A56FC527B50D8A6B962A4AC7C874857B57",
+          "profile": "C:\\Users\\17151\\.ohos\\config\\openharmony\\auto_ohos_default_transactions_com.so_love_bang.transactions.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\17151\\.ohos\\config\\openharmony\\auto_ohos_default_transactions_com.so_love_bang.transactions.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 9,
+    "compatibleSdkVersion": 9,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
