@@ -1,0 +1,2 @@
+# Intelligent-Weighing-System
+基于鸿蒙ArcTS与springboot的智能称量管理系统
